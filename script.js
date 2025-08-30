@@ -254,7 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // optional reset (uncomment for testing)
   // imgEl.addEventListener('click', () => {
-  //   noCount = 0;
+  //   noCount = 0; 
   //   disableEvasiveMode();
   //   fadeSwapImage(ORIGINAL_IMG);
   //   h3.textContent = "Wanna go on a Date with me 😉";
