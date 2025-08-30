@@ -1,27 +1,27 @@
 // script.js - evasive No button that avoids overlapping the Yes button
 
 /* --------------- CONFIG --------------- */
-const ORIGINAL_IMG = "https://gifdb.com/images/thumbnail/puppy-begging-cute-dj9os8ocgpqcoyw2.webp";
+const ORIGINAL_IMG = "https://i.pinimg.com/originals/8d/9a/3e/8d9a3edce3008fa532a5a41d17667f7e.gif";
 
 const NO_IMAGES = [
-  "https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif",
-  "https://media.giphy.com/media/5xtDarqCp0k4E3q2w4g/giphy.gif",
-  "https://media.giphy.com/media/26AOSKk7uXr5w1mzy/giphy.gif",
-  "https://media.giphy.com/media/l0MYyDa8I3b2w7KpC/giphy.gif"
+  "https://i.pinimg.com/originals/e4/8b/19/e48b194083622deba99454f55cf1a781.gif",
+  "https://gifdb.com/images/high/cry-498-x-361-gif-s7r3ywidrv7ohiui.gif",
+  "https://i.pinimg.com/originals/63/64/3d/63643ddbaa47cd74e0e5092e06693bb2.gif",
+  "https://i.pinimg.com/originals/18/5e/2b/185e2ba2b01401b743ce6a1a4a8b4308.gif"
 ];
 
 const NO_MESSAGES = [
-  "Why are you doing this 😣",
-  "Please... one more chance? 😌",
-  "Pretty please? 🙏",
-  "I promise I'll make it worth your time! 😢",
-  "Last chance? I won't bother again, I swear! 😭"
+  "Please Think again 😣",
+  "Aram se soch lo 😌",
+  "Ek aur bar soch lo 🙏",
+  "Yaar Maan Jao Na Please 😢",
+  "Jyada bhav mat khao, Maan v jaoo 😭"
 ];
 
-const LOVE_GIF = "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif";
-const YES_H3 = "Yay — I'm so happy!";
-const YES_H6 = "Can't wait 😄";
-const PLEAD_H6 = "Please?";
+const LOVE_GIF = "https://i.pinimg.com/originals/f6/0b/3e/f60b3e0ebdf7f27e75dc19f0f97e5f0e.gif";
+const YES_H3 = "Yes , I knew it!";
+const YES_H6 = "Text me when you are free😄";
+const PLEAD_H6 = ["Think Agian", "Itni jldi kya hai??", "Kyu aisa kar rhe ho","My Queen of Wakanda"];
 
 /* evasive tuning */
 const EVADE_MIN_DISTANCE = 120;   // px — min distance from last pointer center
@@ -206,8 +206,8 @@ document.addEventListener("DOMContentLoaded", () => {
   noBtn.addEventListener("click", () => {
     noCount += 1;
     const msgIndex = Math.min(noCount - 1, NO_MESSAGES.length - 1);
-    h3.textContent = NO_MESSAGES[msgIndex] + (noCount > NO_MESSAGES.length ? ` (Attempt ${noCount})` : "");
-    h6.textContent = PLEAD_H6;
+    h3.textContent = NO_MESSAGES[msgIndex] ;
+    h6.textContent = PLEAD_H6[msgIndex];
 
     if (Array.isArray(NO_IMAGES) && NO_IMAGES.length > 0) {
       const imgIndex = (noCount - 1) % NO_IMAGES.length;
